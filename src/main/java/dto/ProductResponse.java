@@ -1,2 +1,4 @@
-package dto;public class ProductResponse {
+package dto;
+
+public class ProductResponse {
 }

@@ -1,2 +1,7 @@
-package Client;public class OrderClient {
+package client;
+
+public class OrderClient {
+    public static void main(String[] args) {
+
+    }
 }
