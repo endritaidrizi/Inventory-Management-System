@@ -29,10 +29,14 @@ public class ProductDaoImpl  implements ProductDao {
 
     }
 
+
+
     @Override
     public List<Product> findAll() {
-        return null;
+        Session session = sessionFactory.openSession();
+        return session.createQuery("SELECT a FROM Product a", Product.class).getResultList();
     }
+
 
     @Override
     public Product findById(Long id) {

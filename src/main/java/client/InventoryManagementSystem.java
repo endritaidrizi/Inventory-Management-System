@@ -11,6 +11,7 @@ public class InventoryManagementSystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("Inventory Managment System");
         System.out.println("Shtyp 1 per to Add product");
+        System.out.println("Shtyp 2 per te marre all products");
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
@@ -22,10 +23,12 @@ public class InventoryManagementSystem {
         }
     }
 
-    public static List<Product> displayAllProduct(){
+    public static void displayAllProduct(){
         ProductService productService = new ProductServiceImpl();
 
-        return displayAllProduct();
+        for (Product product: productService.displayAllProduct()) {
+            System.out.println(product);
+        }
 
     }
 

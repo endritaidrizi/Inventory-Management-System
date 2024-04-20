@@ -10,6 +10,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.dialect.function.AvgFunction;
 import validator.ProductValidator;
 
+import java.util.List;
+
 public class ProductServiceImpl implements ProductService {
      SessionFactory sessionFactory= HibernateConfig.getSessionFactory();
 
@@ -22,6 +24,12 @@ public class ProductServiceImpl implements ProductService {
         Product product= ProductConverter.convertToEntity(request);
         //3. therras dao per persistencen
         productDao.save(product);
+    }
+
+    @Override
+    public List<Product> displayAllProduct() {
+
+        return productDao.findAll();
     }
 
 }
